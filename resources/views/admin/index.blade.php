@@ -8,6 +8,9 @@
 <body>
     @include('admin.partials.navbar')
 
+    {{-- Masukkan include search di sini --}}
+    @include('admin.partials.search')
+
     <main>
         @include('admin.partials.hero')
         @include('admin.partials.category')

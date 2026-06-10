@@ -27,7 +27,7 @@
                         <div class="col-md-6">
                             <div class="ctitem d-flex align-items-start gap-3">
                                 <div class="cticon"><i class="fas fa-phone-alt"></i></div>
-                                <div class="ctinfo"><strong>Telepon</strong><span>+62 812-3456-7890</span></div>
+                                <div class="ctinfo"><strong>Telepon</strong><span>+62 877-8807-0460</span></div>
                             </div>
                         </div>
 

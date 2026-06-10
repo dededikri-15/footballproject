@@ -1,0 +1,10 @@
+/* resources/css/app.css */
+@import "./bootstrap.min.css";
+@import "./aos.css";
+@import "./swiper-bundle.min.css";
+@import "./magnific-popup.css";
+@import "./style.css";
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
