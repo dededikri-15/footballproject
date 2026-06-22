@@ -18,7 +18,7 @@
                     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4 pb-3"
                         style="border-bottom: 2px solid #f1f1f1;">
                         <h5 class="mb-0 font-weight-bold text-dark"><i class="fas fa-calendar-day me-2"
-                                style="color: var(--primary, #e8281a);"></i>Jadwal Minggu Ini</h5>
+                                style="color: var(--primary, #e8281a);"></i>Jadwal Pertandingan Terdekat</h5>
                         <span class="badge bg-danger text-white font-weight-bold px-3 py-2"
                             style="border-radius: 6px;">LIVE 24/7</span>
                     </div>

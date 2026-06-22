@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FootballController;
+
+Route::get('/klasemen', [FootballController::class, 'klasemen']);
 
 Route::get('/', function () {
     return view('admin.index');
