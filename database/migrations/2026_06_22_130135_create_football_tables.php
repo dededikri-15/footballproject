@@ -10,15 +10,23 @@ return new class extends Migration {
         // Tabel Liga
         Schema::create('leagues', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); // Premier League, Liga 1, dll
+            $table->string('name');
         });
 
-        // Tabel Tim
+        // Tabel Tim (Lengkap dengan kolom statistik)
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
             $table->foreignId('league_id')->constrained();
             $table->string('name');
+            $table->integer('played')->default(0);
+            $table->integer('won')->default(0);
+            $table->integer('drawn')->default(0);
+            $table->integer('lost')->default(0);
+            $table->integer('gf')->default(0);
+            $table->integer('ga')->default(0);
+            $table->integer('gd')->default(0);
             $table->integer('points')->default(0);
+            $table->string('form')->nullable();
         });
 
         // Tabel Jadwal Pertandingan
@@ -27,8 +35,8 @@ return new class extends Migration {
             $table->foreignId('league_id')->constrained();
             $table->string('home_team');
             $table->string('away_team');
-            $table->timestamp('match_date'); // Ini untuk integrasi ke Google Calendar
-            $table->string('status')->default('scheduled'); // scheduled, finished
+            $table->timestamp('match_date');
+            $table->string('status')->default('scheduled');
         });
     }
 
