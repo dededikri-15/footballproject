@@ -3,25 +3,22 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\View; // <--- INI YANG KURANG
+use Illuminate\Support\Facades\View;
 use App\Models\League;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
-    public function register(): void
-    {
-        //
-    }
-
-    /**
-     * Bootstrap any application services.
-     */
     public function boot(): void
     {
-        // Sekarang Laravel tahu bahwa View merujuk ke Illuminate\Support\Facades\View
-        View::share('leagues', League::all());
+        // Menggunakan Composer untuk mengirim data ke hero dan category
+        // Kita buat agar $leagues tersedia untuk kedua file tersebut
+        View::composer(['admin.partials.hero', 'admin.partials.category'], function ($view) {
+            $leagues = League::all();
+            $view->with([
+                'leagues'      => $leagues,
+                'totalLeagues' => $leagues->count(),
+                'totalClubs'   => $leagues->sum('total_clubs')
+            ]);
+        });
     }
 }

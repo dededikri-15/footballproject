@@ -7,17 +7,24 @@ use App\Models\Team;
 
 class LeagueController extends Controller
 {
+    /**
+     * Menampilkan daftar liga di halaman admin
+     */
     public function index()
     {
         $leagues = League::all();
         return view('admin.index', compact('leagues'));
     }
 
+    /**
+     * Menampilkan klasemen berdasarkan slug liga
+     */
     public function show($slug)
     {
-        // Gunakan query() untuk membantu Intelephense membaca kode
+        // Menggunakan query() agar Intelephense mengenali argumen dengan tepat
         $league = League::query()->where('slug', $slug)->firstOrFail();
 
+        // Mengambil data tim berdasarkan ID liga yang ditemukan
         $teams = Team::query()->where('league_id', $league->id)
             ->orderBy('points', 'desc')
             ->get();

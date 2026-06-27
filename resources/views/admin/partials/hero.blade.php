@@ -25,14 +25,17 @@
                     </a>
                 </div>
 
+                <!-- STATISTIK DINAMIS -->
                 <div class="hstats d-flex gap-3 flex-wrap mt-4">
-                    <div class="hstat"><span class="snum">50<em>+</em></span><small>Liga Terdata</small></div>
+                    <div class="hstat">
+                        <span class="snum">{{ $totalLeagues }}<em>+</em></span>
+                        <small>Liga Terdata</small>
+                    </div>
                     <div class="sdiv"></div>
-                    <div class="hstat"><span class="snum">1.2k<em>+</em></span><small>Total Klub</small></div>
-                    <div class="sdiv"></div>
-                    <div class="hstat"><span class="snum">5k<em>+</em></span><small>Data Pemain</small></div>
-                    <div class="sdiv"></div>
-                    <div class="hstat"><span class="snum">24/7</span><small>Update Data</small></div>
+                    <div class="hstat">
+                        <span class="snum">{{ $totalClubs }}<em>+</em></span>
+                        <small>Total Klub</small>
+                    </div>
                 </div>
             </div>
 
@@ -41,13 +44,10 @@
                     <div class="hcircle">
                         <img src="{{ asset('img/fbstnd.png') }}" alt="Football" />
                     </div>
+                    <!-- Kartu Informasi -->
                     <div class="fcard fc1">
                         <div class="fcoi r"><i class="fas fa-futbol"></i></div>
-                        <div><span class="fcnum">100+</span><span class="fcsm">Match Played</span></div>
-                    </div>
-                    <div class="fcard fc2">
-                        <div class="fcoi y"><i class="fas fa-chart-line"></i></div>
-                        <div><span class="fcnum">99%</span><span class="fcsm">Data Accurate</span></div>
+                        <div><span class="fcnum">0</span><span class="fcsm">Match Played</span></div>
                     </div>
                     <div class="fcard fc3">
                         <div class="fcoi g"><i class="fas fa-sync-alt"></i></div>
