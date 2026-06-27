@@ -9,7 +9,6 @@
     <style>
         body { background-color: #f8f9fa; }
         .table-container { background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        /* Style agar logo liga lebih rapi */
         .catcard { transition: transform 0.2s; border: 1px solid #eee; padding: 15px; border-radius: 10px; background: white; }
         .catcard:hover { transform: scale(1.05); border-color: #0d6efd; }
     </style>
@@ -48,6 +47,12 @@
                             @endforeach
                         </tbody>
                     </table>
+                </div>
+
+                <div class="mt-4 text-center">
+                    <a href="{{ url('/') }}" class="inline-block text-sm text-gray-500 hover:text-gray-800 transition">
+                        &larr; Kembali ke Beranda
+                    </a>
                 </div>
             </div>
         </div>
