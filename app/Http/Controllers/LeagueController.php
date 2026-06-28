@@ -3,29 +3,28 @@
 namespace App\Http\Controllers;
 
 use App\Models\League;
-use App\Models\Team;
+use Illuminate\Support\Facades\DB;
 
 class LeagueController extends Controller
 {
-    /**
-     * Menampilkan daftar liga di halaman admin
-     */
     public function index()
     {
         $leagues = League::all();
         return view('admin.index', compact('leagues'));
     }
 
-    /**
-     * Menampilkan klasemen berdasarkan slug liga
-     */
     public function show($slug)
     {
-        // Menggunakan query() agar Intelephense mengenali argumen dengan tepat
-        $league = League::query()->where('slug', $slug)->firstOrFail();
+        // Cari liga
+        $league = DB::table('leagues')->where('slug', $slug)->first();
 
-        // Mengambil data tim berdasarkan ID liga yang ditemukan
-        $teams = Team::query()->where('league_id', $league->id)
+        if (!$league) {
+            abort(404);
+        }
+
+        // AMBIL TIM HANYA MILIK LIGA INI DAN URUTKAN BERDASARKAN POIN TERBANYAK
+        $teams = DB::table('teams')
+            ->where('league_id', $league->id)
             ->orderBy('points', 'desc')
             ->get();
 

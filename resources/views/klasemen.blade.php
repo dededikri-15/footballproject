@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Klasemen {{ $league->name }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <style>
-        body { background-color: #f8f9fa; }
-        .table-container { background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .catcard { transition: transform 0.2s; border: 1px solid #eee; padding: 15px; border-radius: 10px; background: white; }
-        .catcard:hover { transform: scale(1.05); border-color: #0d6efd; }
-    </style>
 </head>
 <body>
-
-    <section id="klasemen" style="padding-top: 50px; padding-bottom: 50px;">
+    <section id="klasemen" class="py-5">
         <div class="container">
-            
-            @include('admin.partials.category') 
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Jelajahi Berdasarkan <span class="text-danger">Liga</span></h2>
+                <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
+                    @foreach(\App\Models\League::all() as $nav)
+                        <a href="{{ route('liga.show', $nav->slug) }}" 
+                           class="btn {{ $league->id == $nav->id ? 'btn-danger' : 'btn-outline-danger' }}">
+                           {{ $nav->name }}
+                        </a>
+                    @endforeach
+                </div>
+            </div>
 
-            <div class="table-container mt-5">
+            <div class="table-container mt-5 bg-white p-4 shadow rounded">
                 <h2 class="text-center mb-4 text-primary fw-bold">Klasemen {{ $league->name }}</h2>
-                
                 <div class="table-responsive">
                     <table class="table table-hover align-middle">
                         <thead class="table-dark">
@@ -48,15 +48,11 @@
                         </tbody>
                     </table>
                 </div>
-
                 <div class="mt-4 text-center">
-                    <a href="{{ url('/') }}" class="inline-block text-sm text-gray-500 hover:text-gray-800 transition">
-                        &larr; Kembali ke Beranda
-                    </a>
+                    <a href="{{ url('/') }}" class="btn btn-secondary">&larr; Kembali ke Beranda</a>
                 </div>
             </div>
         </div>
     </section>
-
 </body>
 </html>

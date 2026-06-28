@@ -1,4 +1,4 @@
-<section id="menu" class="py-5">
+{{-- <section id="menu" class="py-5">
     <div class="container">
         <div class="text-center mb-5">
             <span class="slbl">Pilihan Kompetisi</span>
@@ -37,53 +37,61 @@
 </style>
 
 <script>
+// Fungsi loadTeams harus didefinisikan dengan benar
 function loadTeams(leagueId, element) {
-    // 1. Ganti selector menjadi .ligabtn agar sesuai dengan class tombol
+    // 1. Hapus class 'active' dari semua tombol
     const buttons = document.querySelectorAll('.ligabtn');
-    
-    // 2. Hapus class 'active' dari SEMUA tombol
     buttons.forEach(btn => btn.classList.remove('active'));
     
-    // 3. Tambahkan class 'active' HANYA ke tombol yang diklik
+    // 2. Tambahkan 'active' ke tombol yang diklik
     element.classList.add('active');
 
+    // 3. Panggil data dari route API
     fetch('/get-teams/' + leagueId)
         .then(response => response.json())
         .then(data => {
             let container = document.getElementById('mgrid');
             
+            // Masukkan kerangka tabel
             container.innerHTML = `
                 <div class="table-responsive">
-                    <table class="table table-hover" style="width:100%; border-collapse: collapse; text-align: center;">
-                        <thead style="background-color: #f8f9fa;">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-dark">
                             <tr>
-                                <th>Pos</th>
-                                <th style="text-align: left;">Klub</th>
-                                <th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th>
+                                <th>Pos</th> <th>Klub</th> <th>P</th> <th>W</th> <th>D</th> <th>L</th> <th>GF</th> <th>GA</th> <th>GD</th> <th>Pts</th>
                             </tr>
                         </thead>
-                        <tbody id="table-body">
-                        </tbody>
+                        <tbody id="table-body"></tbody>
                     </table>
                 </div>`;
 
             let tbody = document.getElementById('table-body');
             
+            // Isi baris tabel
             data.forEach((team, index) => {
                 tbody.innerHTML += `
-                    <tr>
+                    <tr class="text-center">
                         <td>${index + 1}</td>
-                        <td style="text-align: left;">${team.name}</td>
-                        <td>${team.played}</td>
-                        <td>${team.won}</td>
-                        <td>${team.drawn}</td>
-                        <td>${team.lost}</td>
-                        <td>${team.gf}</td>
-                        <td>${team.ga}</td>
+                        <td class="text-start fw-bold">${team.name}</td>
+                        <td>${team.played ?? 0}</td>
+                        <td>${team.won ?? 0}</td>
+                        <td>${team.drawn ?? 0}</td>
+                        <td>${team.lost ?? 0}</td>
+                        <td>${team.gf ?? 0}</td>
+                        <td>${team.ga ?? 0}</td>
                         <td>${team.gf - team.ga}</td>
-                        <td><strong>${team.points}</strong></td>
+                        <td class="fw-bold text-success">${team.points ?? 0}</td>
                     </tr>`;
             });
-        });
+        })
+        .catch(error => console.error('Error:', error));
 }
-</script>
+
+// FIX: Pastikan script berjalan setelah semua elemen HTML siap
+window.onload = function() {
+    const firstButton = document.querySelector('.ligabtn');
+    if(firstButton) {
+        firstButton.click();
+    }
+};
+</script> --}}
