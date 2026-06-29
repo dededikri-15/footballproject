@@ -18,7 +18,7 @@
                 </p>
 
                 <div class="d-flex flex-wrap gap-3 mb-2">
-                    <a href="#menu" class="btn-red"><i class="fas fa-list-ol"></i>Lihat Klasemen</a>
+                    <a href="#category" class="btn-red"><i class="fas fa-list-ol"></i>Lihat Klasemen</a>
                     <a href="#reservation" class="btn-play">
                         <div class="pico"><i class="fas fa-calendar-alt"></i></div>
                         <span>Cek Jadwal</span>

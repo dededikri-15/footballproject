@@ -18,8 +18,8 @@
                                 class="fas fa-chevron-right me-2"></i>Beranda</a></li>
                     <li><a href="#category" style="color: #b0b0b0; text-decoration: none;"><i
                                 class="fas fa-chevron-right refresh me-2"></i>Liga & Kompetisi</a></li>
-                    <li><a href="#menu" style="color: #b0b0b0; text-decoration: none;"><i
-                                class="fas fa-chevron-right me-2"></i>Klasemen</a></li>
+                    {{-- <li><a href="#menu" style="color: #b0b0b0; text-decoration: none;"><i
+                                class="fas fa-chevron-right me-2"></i>Klasemen</a></li> --}}
                     <li><a href="#reservation" style="color: #b0b0b0; text-decoration: none;"><i
                                 class="fas fa-chevron-right me-2"></i>Jadwal</a></li>
                     <li><a href="#blog" style="color: #b0b0b0; text-decoration: none;"><i
@@ -33,12 +33,22 @@
                 <div class="ftit" style="color: #ffffff; font-weight: 700; margin-bottom: 20px;">Kompetisi
                     Utama</div>
                 <ul class="flinks ps-0">
-                    <li><a href="#menu" style="color: #b0b0b0; text-decoration: none;"><i
-                                class="fas fa-chevron-right me-2"></i>Premier League</a></li>
-                    <li><a href="#menu" style="color: #b0b0b0; text-decoration: none;"><i
+                    <li><a href="#category" style="color: #b0b0b0; text-decoration: none;"><i
+                                class="fas fa-chevron-right me-2"></i>Premier League Inggris</a></li>
+                    <li><a href="#category" style="color: #b0b0b0; text-decoration: none;"><i
                                 class="fas fa-chevron-right me-2"></i>La Liga Spanyol</a></li>
-                    <li><a href="#menu" style="color: #b0b0b0; text-decoration: none;"><i
+                    <li><a href="#category" style="color: #b0b0b0; text-decoration: none;"><i
                                 class="fas fa-chevron-right me-2"></i>Serie A Italia</a></li>
+                    <li><a href="#category" style="color: #b0b0b0; text-decoration: none;"><i
+                                class="fas fa-chevron-right me-2"></i>Bundesliga Jerman</a></li>
+                    <li><a href="#category" style="color: #b0b0b0; text-decoration: none;"><i
+                                class="fas fa-chevron-right me-2"></i>Ligue 1 Prancis</a></li>
+                    <li><a href="#category" style="color: #b0b0b0; text-decoration: none;"><i
+                                class="fas fa-chevron-right me-2"></i>Liga 1 Indonesia</a></li>
+                    <li><a href="#category" style="color: #b0b0b0; text-decoration: none;"><i
+                                class="fas fa-chevron-right me-2"></i>Liga 2 Indonesia</a></li>
+                    <li><a href="#category" style="color: #b0b0b0; text-decoration: none;"><i
+                                class="fas fa-chevron-right me-2"></i>Champions League</a></li>
                 </ul>
             </div>
 
@@ -52,8 +62,7 @@
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div class="fciinfo" style="color: #b0b0b0; word-break: break-word;"><strong
-                            style="color: #fff; display: block; margin-bottom: 2px;">Alamat Markas</strong>Desa
-                        Sumberdem, Wonosari, Malang</div>
+                            style="color: #fff; display: block; margin-bottom: 2px;">Alamat</strong>Kelurahan Sumbersari, Kota Malang</div>
                 </div>
 
                 <div class="fci mb-3 d-flex flex-column flex-sm-row align-items-start gap-3">
@@ -73,17 +82,8 @@
                     </div>
                     <div class="fciinfo" style="color: #b0b0b0; word-break: break-word;"><strong
                             style="color: #fff; display: block; margin-bottom: 2px;">Email
-                            Resmi</strong>support@footballproject.com</div>
+                            Resmi</strong>dededikri15@gmail.com</div>
                 </div>
-
-                <div class="fci mb-3 d-flex flex-column flex-sm-row align-items-start gap-3">
-                    <div class="fciico"
-                        style="color: var(--secondary, #f2a900); font-size: 1.2rem; flex-shrink: 0; padding-top: 2px;">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="fciinfo" style="color: #b0b0b0; word-break: break-word;"><strong
-                            style="color: #fff; display: block; margin-bottom: 2px;">Sistem Monitor</strong>24/7
-                        Update Otomatis</div>
                 </div>
             </div>
         </div>

@@ -37,9 +37,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#category">Liga & Kompetisi</a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" href="#menu">Klasemen</a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link" href="#reservation">Jadwal</a>
                 </li>

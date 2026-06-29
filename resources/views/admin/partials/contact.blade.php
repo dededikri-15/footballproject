@@ -11,16 +11,11 @@
         <div class="row g-4 justify-content-center">
             <div class="col-lg-8 mb-4" data-aos="fade-up">
                 <div class="ctdark p-4 p-md-5" style="width: 100%; box-sizing: border-box; border-radius: 18px;">
-                    <h4>Mari Berdiskusi</h4>
-                    <p class="ctsub mb-4">Tim administrasi kami akan merespons pesan Anda dalam waktu maksimal 2
-                        jam.</p>
-
                     <div class="row g-4">
                         <div class="col-md-6">
                             <div class="ctitem d-flex align-items-start gap-3">
                                 <div class="cticon"><i class="fas fa-map-marker-alt"></i></div>
-                                <div class="ctinfo"><strong>Alamat</strong><span>Kecamatan Wonosari, Desa
-                                        Sumberdem,<br />Kabupaten Malang, Jawa Timur</span></div>
+                                <div class="ctinfo"><strong>Alamat</strong><span>Kelurahan Sumbersari,<br />Kota Malang, Jawa Timur</span></div>
                             </div>
                         </div>
 
@@ -34,7 +29,7 @@
                         <div class="col-md-6">
                             <div class="ctitem d-flex align-items-start gap-3">
                                 <div class="cticon"><i class="fas fa-envelope"></i></div>
-                                <div class="ctinfo"><strong>Email</strong><span>support@footballproject.com</span>
+                                <div class="ctinfo"><strong>Email</strong><span>dededikri15@gmail.com</span>
                                 </div>
                             </div>
                         </div>
