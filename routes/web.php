@@ -9,13 +9,18 @@ use Illuminate\Support\Facades\Http; // Tambahkan baris ini di atas
 
 // --- Rute Publik ---
 
-// Rute untuk pengujian API (Hapus jika sudah selesai)
+// Rute untuk pengujian API terbaru
 Route::get('/test-api', function () {
-    $response = Http::withToken(env('SPORTMONKS_API_TOKEN'))
-        ->get(env('SPORTMONKS_BASE_URL') . '/leagues');
+    $url = env('SPORTMONKS_BASE _URL') . '/leagues';
+    $token = env('SPORTMONKS_API_TOKEN');
 
+    // Menggunakan query parameter, lebih mudah digunakan dan diterima oleh API
+    $response = Http::get($url, [
+        'api_token' => $token,
+    ]);
     return $response->json();
 });
+
 
 // Arahkan halaman utama ke daftar liga
 Route::get('/', [LeagueController::class, 'index']);
