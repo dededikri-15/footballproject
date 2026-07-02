@@ -5,13 +5,22 @@ use App\Http\Controllers\LeagueController;
 use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http; // Tambahkan baris ini di atas
 
 // --- Rute Publik ---
+
+// Rute untuk pengujian API (Hapus jika sudah selesai)
+Route::get('/test-api', function () {
+    $response = Http::withToken(env('SPORTMONKS_API_TOKEN'))
+        ->get(env('SPORTMONKS_BASE_URL') . '/leagues');
+
+    return $response->json();
+});
 
 // Arahkan halaman utama ke daftar liga
 Route::get('/', [LeagueController::class, 'index']);
 
-// Rute untuk halaman detail klasemen (yang sudah kita perbaiki)
+// Rute untuk halaman detail klasemen
 Route::get('/liga/{slug}', [LeagueController::class, 'show'])->name('liga.show');
 
 // --- PENTING: Rute API untuk fitur klik-klik di menu.blade.php ---
