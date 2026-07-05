@@ -6,10 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
-    // mengizinkan semua kolom agar sinkorinasi 
-    protected $fillable = ['id', 'league_id', 'name', 'logo'];
+    // Sesuaikan $fillable dengan kolom yang ada di database Anda
+    protected $fillable = ['name', 'league_id', 'played', 'won', 'drawn', 'lost', 'gf', 'ga', 'gd', 'points'];
 
-    // Relasi: Tim ini milik satu Liga
     public function league()
     {
         return $this->belongsTo(League::class);

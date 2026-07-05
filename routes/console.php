@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Foundation\Inspiring;
-use Illuminate\Support\Facades\Artisan;
+// use App\Console\Commands\SyncLeagues;
+// use Illuminate\Support\Facades\Artisan;
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote');
+// Artisan::command('app:sync-leagues', function () {
+//     $this->call(SyncLeagues::class);
+// })->purpose('Menarik data liga dari Sportmonks API ke database');
