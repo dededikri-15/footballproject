@@ -4,19 +4,28 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
-        // Tabel Liga
+        // Tabel Leagues
         Schema::create('leagues', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug');
+            $table->string('image')->nullable();
+            $table->integer('total_clubs')->default(0);
+            $table->timestamps();
         });
 
-        // Tabel Tim (Lengkap dengan kolom statistik)
+        // Tabel Teams
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('league_id')->constrained();
+            $table->foreignId('league_id')->constrained()->onDelete('cascade');
+            $table->integer('pos');
             $table->string('name');
             $table->integer('played')->default(0);
             $table->integer('won')->default(0);
@@ -26,23 +35,15 @@ return new class extends Migration {
             $table->integer('ga')->default(0);
             $table->integer('gd')->default(0);
             $table->integer('points')->default(0);
-            $table->string('form')->nullable();
-        });
-
-        // Tabel Jadwal Pertandingan
-        Schema::create('matches', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('league_id')->constrained();
-            $table->string('home_team');
-            $table->string('away_team');
-            $table->timestamp('match_date');
-            $table->string('status')->default('scheduled');
+            $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('matches');
         Schema::dropIfExists('teams');
         Schema::dropIfExists('leagues');
     }
